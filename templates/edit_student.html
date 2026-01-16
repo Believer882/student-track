@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Edit Student</h2>
+<form method="POST">
+    <label>Name: <input type="text" name="name" value="{{ student.name }}" required></label><br>
+    <!-- Add more fields as needed -->
+    <button type="submit">Update</button>
+</form>
+{% if get_flashed_messages() %}
+    <div>{{ get_flashed_messages()[0] }}</div>
+{% endif %}
+<a href="{{ url_for('index') }}">Back to list</a>
+{% endblock %}
